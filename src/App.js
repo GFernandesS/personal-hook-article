@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { useCounter } from './hooks/useCounter'
 
 function App() {
+  const [counter, increment, decrement] = useCounter() //Realizando o desestructuring do retorno do hook
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2 color="blue">{counter}</h2>
+      <button onClick={increment}>+1</button>
+      <button onClick={decrement}>-1</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
